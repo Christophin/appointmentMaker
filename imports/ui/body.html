@@ -1,0 +1,23 @@
+<body>
+<div class="center-align container">
+    <header>
+        <h4>Schedule an appointment</h4>
+    </header>
+    {{> loginButtons}}
+    {{#if currentUser}}
+        <ul class="row">
+            {{#each appointments}}
+                {{> appointment}}
+            {{/each}}
+        </ul>
+    {{else}}
+        <h5>You must be logged in to schedule an appointment.</h5>
+        <ul class="row">
+            {{#each appointments}}
+                {{> appointment}}
+            {{/each}}
+        </ul>
+    {{/if}}
+</div>
+</body>
+

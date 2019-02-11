@@ -1,0 +1,45 @@
+<template name="appointment">
+    <li class="col s12 listItems">
+        <a class="{{isScheduled}} appointments modal-trigger" href="#modal{{id}}">
+            {{text}}
+        </a>
+    </li>
+    <div id="modal{{id}}" class="modal">
+        <div class="modal-content">
+            <h4>Schedule an appointment for {{text}}</h4>
+                <div class="row">
+                    <form class="col s12">
+                        <div class="row">
+                            <div class="input-field col s6">
+                                <i class="material-icons prefix">account_circle</i>
+                                <input value="{{name}}" id="name{{id}}" type="text" class="validate">
+                                <label for="name{{id}}">Name</label>
+                            </div>
+                            <div class="input-field col s6">
+                                <i class="material-icons prefix">phone</i>
+                                <input value="{{phone}}" id="phone{{id}}" type="tel" class="validate">
+                                <label for="phone{{id}}">phone</label>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            <div>
+                {{#if scheduledBy}}
+                    <div class="center-align">Scheduled by {{scheduledBy}}</div>
+                {{/if}}
+            </div>
+        </div>
+        {{#if name}}
+            <div class="modal-footer">
+                <a href="#!" class="modal-close waves-effect waves-green btn-flat">Go back</a>
+                <a href="#!" class="modal-close waves-effect waves-green btn-flat cancelHandler">Cancel Appointment</a>
+                <a href="#!" class="waves-effect waves-green btn-flat appointmentHandler">Update</a>
+            </div>
+        {{else}}
+            <div class="modal-footer">
+                <a href="#!" class="modal-close waves-effect waves-green btn-flat">Go back</a>
+                <a href="#!" class="waves-effect waves-green btn-flat appointmentHandler">Schedule</a>
+            </div>
+        {{/if}}
+    </div>
+</template>

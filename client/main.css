@@ -1,0 +1,14 @@
+body {
+  padding: 10px;
+  font-family: sans-serif;
+}
+
+.listItems {
+  margin: 15px;
+
+}
+
+.appointments {
+  padding: 10px;
+  border-radius: 25% 10%;
+}
